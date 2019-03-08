@@ -13,7 +13,7 @@ sysrc php_fpm_enable="YES"
 service mysql-server start
 service nginx start
 
-printf "\n\n$abadmin\n$dbadmin\n\n\n\n\n\n " | mysql_secure_installation
+printf "\n\n$dbadmin\n$dbadmin\n\n\n\n\n\n " | mysql_secure_installation
 
 mysql -u root -p$dbadmin -e "create database wpdb;"
 mysql -u root -p$dbadmin -e "grant all privileges on wpdb.* to wpdbuser@'%' identified by '$wpdbuser';"
