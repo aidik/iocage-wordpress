@@ -1,6 +1,6 @@
 {
     "name": "Wordpress",
-    "release": "12.0-RELEASE",
+    "release": "11.2-RELEASE",
     "artifact": "https://github.com/aidik/iocage-wordpress.git",
     "properties": {
         "boot": "on"
@@ -37,7 +37,7 @@
         "php72-pecl-ssh2",
         "php72-phar"
     ],
-    "packagesite": "https://pkg.freebsd.org/FreeBSD:12:amd64/latest/",
+    "packagesite": "https://pkg.freebsd.org/FreeBSD:11:amd64/latest/",
     "fingerprints": {
         "plugin-default": [
             {
