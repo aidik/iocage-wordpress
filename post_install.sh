@@ -33,5 +33,5 @@ mkdir /usr/local/www/wp
 cd /usr/local/www/wp
 chown -R www:wheel /usr/local/www/wp/
 sudo -u www wp core download
-sudo -u www wp config create --dbname=wpdb --dbuser=wpuser --dbpass=$wpdbuser
+sudo -u www wp config create --dbname=wpdb --dbuser=wpdbuser --dbpass=$wpdbuser
 sudo -u www wp core install --url=wordpress.local --title=iocage-wp-plugin --admin_user=wpadmin --admin_password=$wpadmin --admin_email=no@email.sry
