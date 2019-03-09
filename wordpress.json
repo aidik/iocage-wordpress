@@ -14,6 +14,7 @@
         "php72",
         "php72-xml",
         "php72-hash",
+        "php72-gd",
         "php72-curl",
         "php72-tokenizer",
         "php72-zlib",
@@ -32,6 +33,7 @@
         "php72-sockets",
         "php72-xmlreader",
         "php72-exif",
+        "php72-pecl-imagick",
         "php72-pecl-ssh2",
         "php72-phar"
     ],
