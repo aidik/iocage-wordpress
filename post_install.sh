@@ -19,7 +19,7 @@ service nginx start
 printf "\n\n$dbadmin\n$dbadmin\n\n\n\n\n " | mysql_secure_installation
 
 mysql -u root -p$dbadmin -e "create database wpdb;"
-mysql -u root -p$dbadmin -e "grant all privileges on wpdb.* to wpdbuser@'%' identified by '$wpdbuser';"
+mysql -u root -p$dbadmin -e "grant all privileges on wpdb.* to wpdbuser@'%' identified by \'$wpdbuser\';"
 mysql -u root -p$dbadmin -e "FLUSH PRIVILEGES;"
 
 
