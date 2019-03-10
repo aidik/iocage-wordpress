@@ -1,5 +1,6 @@
 {
     "name": "Wordpress",
+    "plugin_schema": "2",
     "release": "11.2-RELEASE",
     "artifact": "https://github.com/aidik/iocage-wordpress.git",
     "properties": {

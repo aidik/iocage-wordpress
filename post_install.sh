@@ -1,14 +1,14 @@
 #!/bin/csh
 
 set dbadmin="`openssl rand -base64 12`"
-echo "DB Root Password"
-echo $dbadmin
+echo "DB Root Password" > /root/PLUGIN_INFO
+echo $dbadmin >> /root/PLUGIN_INFO
 set wpdbuser="`openssl rand -base64 12`"
-echo "WPDB User Password"
-echo $wpdbuser
+echo "WPDB User Password" >> /root/PLUGIN_INFO
+echo $wpdbuser >> /root/PLUGIN_INFO
 set wpadmin="`openssl rand -base64 12`"
-echo "WP Admin Password"
-echo $wpadmin
+echo "WP Admin Password" >> /root/PLUGIN_INFO
+echo $wpadmin >> /root/PLUGIN_INFO
 
 sysrc -f /etc/rc.conf mysql_enable="YES"
 sysrc -f /etc/rc.conf nginx_enable="YES"
@@ -35,7 +35,7 @@ sudo -u www wp core install --url=wordpress.local --title=iocage-wp-plugin --adm
 
 cp /usr/local/etc/php.ini-production /usr/local/etc/php.ini
 
-sed -i "" 's%;open_basedir =%open_basedir = /usr/local/www/wp:/tmp%g' /usr/local/etc/php.ini
+sed -i "" 's%;open_basedir =%open_basedir = /usr/local/www/wp:/tmp:/usr/local/bin/wp%g' /usr/local/etc/php.ini
 sed -i "" 's/memory_limit = 128M/memory_limit = 256M/g' /usr/local/etc/php.ini
 sed -i "" 's/post_max_size = 8M/post_max_size = 32M/g' /usr/local/etc/php.ini
 sed -i "" 's/upload_max_filesize = 2M/upload_max_filesize = 32M/g' /usr/local/etc/php.ini
