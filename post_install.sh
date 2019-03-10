@@ -1,14 +1,14 @@
 #!/bin/csh
 
 set dbadmin="`openssl rand -base64 12`"
-echo "DB Root Password" > /root/PLUGIN_INFO
-echo '$dbadmin' >> /root/PLUGIN_INFO
+echo "DB Root Password"
+echo $dbadmin
 set wpdbuser="`openssl rand -base64 12`"
-echo "WPDB User Password" >> /root/PLUGIN_INFO
-echo '$wpdbuser' >> /root/PLUGIN_INFO
+echo "WPDB User Password"
+echo $wpdbuser
 set wpadmin="`openssl rand -base64 12`"
-echo "WP Admin Password" >> /root/PLUGIN_INFO
-echo '$wpadmin' >> /root/PLUGIN_INFO
+echo "WP Admin Password"
+echo $wpadmin
 
 sysrc -f /etc/rc.conf mysql_enable="YES"
 sysrc -f /etc/rc.conf nginx_enable="YES"
@@ -30,7 +30,7 @@ mkdir /usr/local/www/wp
 cd /usr/local/www/wp
 chown -R www:wheel /usr/local/www/wp/
 sudo -u www wp core download
-sudo -u www wp config create --dbname=wpdb --dbuser=wpdbuser --dbpass='$wpdbuser'
+sudo -u www wp config create --dbname=wpdb --dbuser=wpdbuser --dbpass=$wpdbuser
 sudo -u www wp core install --url=wordpress.local --title=iocage-wp-plugin --admin_user=wpadmin --admin_password=$wpadmin --admin_email=no@email.sry
 
 cp /usr/local/etc/php.ini-production /usr/local/etc/php.ini
